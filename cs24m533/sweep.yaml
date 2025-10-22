@@ -1,0 +1,35 @@
+# --------------------------------------------------------------------
+# Program:
+#   train.py — the main training script to be executed.
+#
+# Method:
+#   grid — performs exhaustive search over all parameter combinations.
+#
+# Metric:
+#   name: val_acc — the metric to monitor.
+#   goal: maximize — higher validation accuracy is better.
+#
+# Parameters:
+#   activation  — different activation functions to test.
+#   optimizer   — optimization algorithms to evaluate.
+#   batch_size  — training batch sizes.
+#   lr          — learning rates.
+#   epochs      — number of epochs to train.
+# --------------------------------------------------------------------
+
+program: train.py
+method: grid
+metric:
+  name: val_acc
+  goal: maximize
+parameters:
+  activation:
+    values: ["relu", "silu", "gelu", "tanh", "sigmoide"]
+  optimizer:
+    values: ["sgd", "nesterov", "adam", "rmsprop", "adagrad", "nadam"]
+  batch_size:
+    values: [64, 128]
+  lr:
+    values: [0.1, 0.01, 0.001]
+  epochs:
+    value: [10, 20, 30]

@@ -1,0 +1,4 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
+cs24m533/data.zip filter=lfs diff=lfs merge=lfs -text
+cs24m533/venv.zip filter=lfs diff=lfs merge=lfs -text
+cs24m533/checkpoints.zip filter=lfs diff=lfs merge=lfs -text
