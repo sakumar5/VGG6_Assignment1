@@ -9,6 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## Single- single Runs
+# i did this to time the execution during multiple nights
 ```bash
 python train.py --activation relu --optimizer sgd --lr 0.01 --batch_size 128 --epochs 30
 python train.py --activation silu --optimizer sgd --lr 0.01 --batch_size 128 --epochs 30
@@ -47,16 +48,16 @@ python train.py --activation sigmoide --optimizer rmsprop --lr 0.01 --batch_size
 python train.py --activation sigmoide --optimizer adagrad --lr 0.001 --batch_size 64 --epochs 20
 python train.py --activation sigmoide --optimizer adam --lr 0.001 --batch_size 128 --epochs 30
 
-#running
+
 python train.py --activation relu --optimizer nadam --lr 0.001 --batch_size 64 --epochs 10
-#pending
 python train.py --activation silu --optimizer nadam --lr 0.01 --batch_size 128 --epochs 20
 python train.py --activation gelu --optimizer nadam --lr 0.1 --batch_size 64 --epochs 30
-python train.py --activation tanh --optimizer nadam --lr 0.001 --batch_size 128 --epochs 20
+python train.py --activation tanh --optimizer nadam --lr 0.01 --batch_size 128 --epochs 20
 python train.py --activation sigmoide --optimizer nadam --lr 0.01 --batch_size 64 --epochs 30
 ```
 
 ## WandB Sweep
+# we can use this for batch run
 ```bash
 wandb login
 wandb sweep sweep.yaml
